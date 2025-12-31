@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Daily Growth Journal</title>
+
+    <link rel="stylesheet" href="css/styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Nunito:wght@300;400&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body class="light">
+<header>
+    <h1>Daily Growth Journal</h1>
+    <p class="subtitle">A gentle place to understand how you feel</p>
+    <button class="toggle" onclick="toggleTheme()">🌙</button>
+</header>
+
+<main>
+    <section class="card">
+        <h2>New Reflection</h2>
+
+        <select id="mood" onchange="applyMoodGradient()">
+            <option value="calm">Calm </option>
+            <option value="content"> Content 🤩</option>
+            <option value="neutral"> Neutral 🌱</option>
+            <option value="anxious"> Anxious ⛈️</option>
+            <option value="sad"> Sad 🥀</option>
+        </select>
+
+        <textarea id="entryText" placeholder="Write gently..."></textarea>
+        <button id="saveBtn">Save Reflection</button>
+    </section>
+
+    <section class="card center">
+        <h2>Your Growth</h2>
+        <div id="plant"></div>
+    </section>
+
+    <section class="card">
+        <h2>Emotional Flow</h2>
+        <canvas id="moodChart"></canvas>
+        <p id="weeklySummary"></p>
+    </section>
+
+    <section class="card">
+        <h2>Recent Reflections</h2>
+        <ul id="entriesList"></ul>
+    </section>
+</main>
+
+<script src="js/storage.js"></script>
+<script src="js/sentiment.js"></script>
+<script src="js/growth.js"></script>
+<script src="js/theme.js"></script>
+<script src="js/journal.js"></script>
+<script src="js/charts.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        renderEntries();
+        renderChart();
+        updateGrowth();
+        document.getElementById("saveBtn").addEventListener("click", saveEntry);
+    });
+</script>
+</body>
+</html>

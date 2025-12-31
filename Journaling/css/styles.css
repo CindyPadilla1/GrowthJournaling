@@ -1,0 +1,104 @@
+:root {
+    --light-bg: linear-gradient(180deg, #fdf6f9, #eef2ff);
+    --dark-bg: linear-gradient(180deg, #1c1c2e, #2a2a40);
+    --light-card: rgba(255,255,255,0.9);
+    --dark-card: rgba(40,40,60,0.9);
+    --light-text: #4a4a4a;
+    --dark-text: #ececff;
+}
+
+body {
+    margin: 0;
+    font-family: 'Nunito', sans-serif;
+    transition: background 0.6s, color 0.6s;
+}
+
+body.light {
+    background: var(--light-bg);
+    color: var(--light-text);
+}
+
+body.dark {
+    background: var(--dark-bg);
+    color: var(--dark-text);
+}
+
+header {
+    text-align: center;
+    padding: 3rem 1rem;
+    position: relative;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+}
+
+.subtitle {
+    opacity: 0.7;
+}
+
+.toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    border-radius: 50%;
+    border: none;
+    padding: 0.6rem;
+    cursor: pointer;
+}
+
+main {
+    max-width: 900px;
+    margin: auto;
+    padding: 1rem;
+}
+
+.card {
+    border-radius: 28px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+}
+
+body.light .card { background: var(--light-card); }
+body.dark .card { background: var(--dark-card); }
+
+textarea, select {
+    width: 100%;
+    border-radius: 18px;
+    border: none;
+    padding: 1rem;
+    margin-top: 1rem;
+    font-size: 1rem;
+}
+
+button {
+    margin-top: 1rem;
+    padding: 0.7rem 1.6rem;
+    border-radius: 24px;
+    border: none;
+    background: linear-gradient(135deg, #f6c1cc, #b8b9ff);
+    color: white;
+    cursor: pointer;
+}
+
+.center {
+    text-align: center;
+}
+
+#plant {
+    font-size: 3rem;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background: rgba(255,255,255,0.35);
+    padding: 1rem;
+    border-radius: 18px;
+    margin-bottom: 1rem;
+}
